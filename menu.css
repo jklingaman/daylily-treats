@@ -27,10 +27,17 @@ ol {
     grid-template-rows: auto 1fr;
     width: 80%;
     margin: 0 auto;
-    align-items: start;  
+    align-items: center;  
     text-align: center;
+    padding-bottom: 450px;
 }
-
+#img1 {
+    justify-self: center;
+    grid-column: span 2;
+    position: absolute;
+    width: 350px;
+    top: 40px;
+}
 .headers {
     grid-column: span 2; 
     margin-bottom: 25px;
@@ -41,13 +48,20 @@ ol {
     display: flex;
     flex-direction: column;  
     align-items: center;  
-    
+    position: relative;
 }
 
-#leftDiv {
-    border-right: 2px solid black;
-    padding-bottom: 25px;
+#rightDiv {
+    position: absolute;
+    right: 20px;
+    top: 400px;
 }
+#leftDiv {
+    position: absolute;
+    top: 400px;
+    left: 100px;
+}
+
 
 #leftDiv h3 {
     margin-bottom: 5px;
@@ -65,4 +79,27 @@ ol {
 #rightDiv ol {
     margin-top: 0;
     padding-right: 20px;
+}
+
+#innerLeftDiv, #innerRightDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;  
+    width: 100%; 
+}
+
+#innerLeftDiv div, #innerRightDiv div {
+    text-align: center; 
+}
+#innerLeftDiv {
+    width: 600px;
+    margin: 25px;
+}
+#logo {
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto; 
 }
