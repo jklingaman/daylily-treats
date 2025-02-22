@@ -62,7 +62,6 @@ ol {
     left: 100px;
 }
 
-
 #leftDiv h3 {
     margin-bottom: 5px;
 }
@@ -93,6 +92,9 @@ ol {
 }
 #innerLeftDiv {
     width: 600px;
+    margin: 25px;
+}
+#innerRightDiv {
     margin: 25px;
 }
 #logo {

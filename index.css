@@ -77,6 +77,7 @@ p {
     z-index: 1;
 }
 #hammy {
+    margin-top: -9px;
     font-size: 5vh;
     cursor: pointer;
     z-index: 1;
@@ -100,6 +101,10 @@ p {
     align-items: center;
     gap: 100px;
     padding-top: 1.7%;
+    background-color: white;
+    opacity: 50%;
+    margin-top: 0px;
+    box-shadow: -5px 10px 5px rgba(0, 0, 0, 0.2);
 }
 #nav-menu a:hover {
     color: #734f96;
@@ -161,7 +166,7 @@ p {
 		color: black;
 		cursor: pointer;
 		position: absolute;
-		top: -10px;
+		top: 15px;
 		right: 9%;
 		display: block;
 		z-index: 1;
