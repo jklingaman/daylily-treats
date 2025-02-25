@@ -39,6 +39,8 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 h2 {
@@ -68,4 +70,64 @@ h4 {
 
 .checkboxGroup li {
     margin-bottom: 10px;
+}
+#forum {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 25px;
+}
+input {
+	border-radius: 10px;
+	border: none;
+	padding-left: 10px;
+	font-size: 18px;
+}
+label {
+	font-size: 24px;
+}
+h4 {
+	font-size: 38px;
+}
+#schedule {
+	width: 25%;
+}
+#introductions {
+	width: 50%;
+}
+#emailAddress {
+	width: 90%;
+}
+#emailAddress .basic {
+	width: 30%;
+}
+#phoneNumber {
+	width: 90%;
+}
+#phoneNumber #pN {
+	width: 20%;
+}
+#otherText {
+	width: 190px;
+}
+#colors	{
+	width: 40%;
+}
+#quantity {
+	width: 35%;
+}
+#toppersDiv {
+	width: 80%;
+}
+#feedback {
+	width: 40%;
+}
+#referral {
+	width: 35%;
+}
+#submitOrder {
+	width: 20%;
 }

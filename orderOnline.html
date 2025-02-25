@@ -39,131 +39,150 @@
             </ol>
 
       </div>
-        <form action="/submit-order" method="post">
+        <form action="/submit-order" method="post" id="forum">
         <div id="main"></div>
-        <h4>Select your pickup day:</h4>
-        <p id="tips"><em>(All orders must be scheduled 2 weeks in advance! ~ Pickup times start after 10:30 AM)</em></p>
-        <input type="date" name="pickupDate">
+        <div id="pickupDay">
+            <h4>Select your pickup day:</h4>
+            <p id="tips"><em>(All orders must be scheduled 2 weeks in advance! ~ Pickup times start after 10:30 AM)</em></p>
+            <input type="date" name="pickupDate" id="schedule">
+        </div>
+        
+        <div id="introductions">
+            <h4>First & Last Name:</h4>
+            <input type="text" name="name" placeholder="Example: John Doe" class="basic">
+        </div>
 
-        <h4>First & Last Name:</h4>
-        <input type="text" name="name" placeholder="Example: John Doe">
-
-        <h4>Email Address:</h4>
-        <input type="text" name="email" placeholder="Example: JohnDoe@gmail.com">
-
-        <h4>Phone Number:</h4>
-        <input type="tel" name="phone" placeholder="Example: (888)-888-8888">
-
-        <h4>Cake Pops or Oreos:</h4>
+        <div id="emailAddress">
+            <h4>Email Address:</h4>
+            <input type="text" name="email" placeholder="Example: JohnDoe@gmail.com" class="basic">
+        </div>
+        
+        <div id="phoneNumber">
+            <h4>Phone Number:</h4>
+            <input type="tel" name="phone" placeholder="Example: (888)-888-8888" id="pN">
+        </div>
+        <div id="decisions">
+            <h4>Cake Pops or Oreos:</h4>
+                <label>
+                    <input type="radio" name="productChoice" value="Cake Pops"> Cake Pops
+                </label><br>
+                <label>
+                    <input type="radio" name="productChoice" value="Oreos"> Oreos
+                </label>
+            </div>
+        <div id="treatOccasion">
+            <h4>Whats the occasion:</h4>
+                <label>
+                    <input type="radio" name="occasion" value="Birthday"> Birthday
+                </label><br>
+                <label>
+                    <input type="radio" name="occasion" value="Baby Shower"> Baby Shower
+                </label><br>
+                <label>
+                    <input type="radio" name="occasion" value="Bridal Shower"> Bridal Shower
+                </label><br>
+                <label>
+                    <input type="radio" name="occasion" value="Wedding"> Wedding
+                </label><br>
+                <label>
+                    <input type="radio" name="occasion" value="other" id="otherRadio"> other
+                </label><br>
+                
+                <div id="otherInput" style="display:none;">
+                    <label for="otherText">Please specify: </label>
+                    <input type="text" id="otherText" name="otherOccasion" placeholder="Example: Because I love them!">
+                </div>
+            </div>
+        <div id="colorList">
+            <h4>Please list up to 2 colors that correspond with your theme:</h4>
+            <p id="tips"><em>(Please be as specific as possible)</em></p>
+            <input type="text" name="colors" placeholder="Example: Sage green & sea green" id="colors">
+        </div>
+        <div id="colorFiles">
+            <h4>If you would rather you may input a photo, with your photos:</h4>
+            <input type="file" name="colors">
+        </div>  
+        <Div id="cakeFlavors">
+            <h4>Select your cake pop flavor(s):</h4> <!-- hide this if they chose oreos? -->
+            <p><em>(Minimum of 1 dozen per 1 color)</em></p>
+            <ul class = checkboxGroup>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Vanilla">Vanilla</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Chocolate">Chocolate</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Peanut Butter">Peanut Butter</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Red Velvet">Red Velvet</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Funfetti">Funfetti</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Strawberry">Strawberry</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="Pecan">Pecan</label></li>
+                <li><label><input type="checkbox" name="cakePopChoice" value="N/a">N/a</label></li>
+            </ul>
+        </div>
+        <div id="oreoFlavors">
+            <h4>Select your Oreo flavor(s):</h4>
+            <p><em>(Minimum of 1 dozen per 1 color)</em></p>
+            <ul class = checkboxGroup>
+                <li><label><input type="checkbox" name="oreoChoice" value="Regular Stuffed">Regular Stuffed</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="Oreo Thins">Oreo Thins</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="Mint Oreos">Mint Oreos</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="Golden Oreos">Golden Oreos</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="GF Regular Stuffed">GF* Regular Stuffed</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="GF Mint Oreos">GF* Mint Oreos</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="GF Golden Oreos">GF* Golden Oreos</label></li>
+                <li><label><input type="checkbox" name="oreoChoice" value="N/a">N/a</label></li>
+            </ul>
+        </div>
+        <div id="quantityDiv">
+            <h4>Please list quantity(Per Flavor):</h4>
+            <p><strong>1 Dozen minimum per flavor</strong></p>
+            <p><em>Example: 2 Dozen Vanilla Cake Pops <br> Example: 1 Dozen GF regular Stuffed <br> Example: 3 Dozen Funfetti Cake Pops and 2 Dozen Golden Oreos</em></p>
+            <input type="text" name="flavors" placeholder="Submit your answer here..." id="quantity">
+        </div>
+        <div id="cakeShape">
+            <h4>Select the shape of Cake pops:</h4>
+            <p><em>(1 Shape per dozen)</em></p>
+            <ul class="checkboxGroup">
+                <li><label><input type="checkbox" name="shapes" value="Signature Disc Shape">Signature Dish Shape</label></li>
+                <li><label><input type="checkbox" name="shapes" value="Heart Shape">Heart Shape</label></li>
+                <li><label><input type="checkbox" name="shapes" value="Flower Shape">Flower Shape</label></li>
+                <li><label><input type="checkbox" name="shapes" value="Dealers Choice">Dealers Choice!</label></li>
+            </ul>
+        </div>
+        <div id="decorationsDiv">
+            <h4>Signature Cake Pop/ Oreo design & decoration</h4>
+            <p><em>(Select all that apply)</em></p>
+            <ul class="checkboxGroup">
+                <li><label><input type="checkbox" name="d&dChoices" value="Tons of Sprinkles!">Tons of Sprinkles!</label></li>
+                <li><label><input type="checkbox" name="d&dChoices" value="Calculated Sprinkles">Calculated Sprinkles</label></li>
+                <li><label><input type="checkbox" name="d&dChoices" value="Simple Chocolate Drizzle">Simple Chocolate Drizzle</label></li>
+                <li><label><input type="checkbox" name="d&dChoices" value="Mixed Drizzle Designs">Mixed Drizzle Designs</label></li> 
+                <li><label><input type="checkbox" name="d&dChoices" value="Marbled">Marbled</label></li>
+                <li><label><input type="checkbox" name="d&dChoices" value="Dealers Choice">Surprise me!</label></li>
+            </ul>
+        </div>
+        <div id="toppersDiv">
+            <h4>Are you wanting to add toppers to your Cake Pops/ Oreos? If so, please be specific on what you want.</h4>
+            <p><em>(Don't forget toppers are an extra $5 per dozen!)</em></p>
+            <input type="text" name="toppers" placeholder="Example: Chocolate Rose" id="toppers">
+        </div>
+        <div id="individuallyWrapped">
+            <h4>Are you wanting them to be individually wrapped?</h4>
+            <p><em>(+$2 Per dozen)</em></p>
             <label>
-                <input type="radio" name="productChoice" value="Cake Pops"> Cake Pops
+                <input type="radio" name="wrapped" value="Yes, I would like them individually wrapped!"> Yes, I would like them individually wrapped!
             </label><br>
             <label>
-                <input type="radio" name="productChoice" value="Oreos"> Oreos
+                <input type="radio" name="unwrapped" value="Forget about it!"> Forget about it!
             </label>
+        </div>
+        <div id="contactMethod">
+            <h4>Preffered contact method:</h4>
 
-        <h4>Whats the occasion:</h4>
-            <label>
-                <input type="radio" name="occasion" value="Birthday"> Birthday
-            </label><br>
-            <label>
-                <input type="radio" name="occasion" value="Baby Shower"> Baby Shower
-            </label><br>
-            <label>
-                <input type="radio" name="occasion" value="Bridal Shower"> Bridal Shower
-            </label><br>
-            <label>
-                <input type="radio" name="occasion" value="Wedding"> Wedding
-            </label><br>
-            <label>
-                <input type="radio" name="occasion" value="other" id="otherRadio"> other
-            </label><br>
-
-            <div id="otherInput" style="display:none;">
-                <label for="otherText">Please specify: </label>
-                <input type="text" id="otherText" name="otherOccasion" placeholder="Example: Because I love them!">
-              </div>
-
-        <h4>Please list up to 2 colors that correspond with your theme:</h4>
-        <p id="tips"><em>(Please be as specific as possible)</em></p>
-        <input type="text" name="colors" placeholder="Example: Sage green & sea green">
-
-        <h4>If you would rather you may input a photo, with your photos:</h4>
-        <input type="file" name="colors">
-
-        <h4>Select your cake pop flavor(s):</h4> <!-- hide this if they chose oreos? -->
-        <p><em>(Minimum of 1 dozen per 1 color)</em></p>
-        <ul class = checkboxGroup>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Vanilla">Vanilla</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Chocolate">Chocolate</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Peanut Butter">Peanut Butter</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Red Velvet">Red Velvet</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Funfetti">Funfetti</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Strawberry">Strawberry</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="Pecan">Pecan</label></li>
-            <li><label><input type="checkbox" name="cakePopChoice" value="N/a">N/a</label></li>
-        </ul>
-
-        <h4>Select your Oreo flavor(s):</h4>
-        <p><em>(Minimum of 1 dozen per 1 color)</em></p>
-        <ul class = checkboxGroup>
-            <li><label><input type="checkbox" name="oreoChoice" value="Regular Stuffed">Regular Stuffed</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="Oreo Thins">Oreo Thins</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="Mint Oreos">Mint Oreos</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="Golden Oreos">Golden Oreos</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="GF Regular Stuffed">GF* Regular Stuffed</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="GF Mint Oreos">GF* Mint Oreos</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="GF Golden Oreos">GF* Golden Oreos</label></li>
-            <li><label><input type="checkbox" name="oreoChoice" value="N/a">N/a</label></li>
-        </ul>
-
-        <h4>Please list quantity(Per Flavor):</h4>
-        <p><strong>1 Dozen minimum per flavor</strong></p>
-        <p><em>Example: 2 Dozen Vanilla Cake Pops <br> Example: 1 Dozen GF regular Stuffed <br> Example: 3 Dozen Funfetti Cake Pops and 2 Dozen Golden Oreos</em></p>
-        <input type="text" name="flavors" placeholder="Submit your answer here...">
-
-        <h4>Select the shape of Cake pops:</h4>
-        <p><em>(1 Shape per dozen)</em></p>
-        <ul class="checkboxGroup">
-            <li><label><input type="checkbox" name="shapes" value="Signature Disc Shape">Signature Dish Shape</label></li>
-            <li><label><input type="checkbox" name="shapes" value="Heart Shape">Heart Shape</label></li>
-            <li><label><input type="checkbox" name="shapes" value="Flower Shape">Flower Shape</label></li>
-            <li><label><input type="checkbox" name="shapes" value="Dealers Choice">Dealers Choice!</label></li>
-        </ul>
-
-        <h4>Signature Cake Pop/ Oreo design & decoration</h4>
-        <p><em>(Select all that apply)</em></p>
-        <ul class="checkboxGroup">
-            <li><label><input type="checkbox" name="d&dChoices" value="Tons of Sprinkles!">Tons of Sprinkles!</label></li>
-            <li><label><input type="checkbox" name="d&dChoices" value="Calculated Sprinkles">Calculated Sprinkles</label></li>
-            <li><label><input type="checkbox" name="d&dChoices" value="Simple Chocolate Drizzle">Simple Chocolate Drizzle</label></li>
-            <li><label><input type="checkbox" name="d&dChoices" value="Mixed Drizzle Designs">Mixed Drizzle Designs</label></li> 
-            <li><label><input type="checkbox" name="d&dChoices" value="Marbled">Marbled</label></li>
-            <li><label><input type="checkbox" name="d&dChoices" value="Dealers Choice">Surprise me!</label></li>
-        </ul>
-
-        <h4>Are you wanting to add toppers to your Cake Pops/ Oreos? If so, please be specific on what you want.</h4>
-        <p><em>(Don't forget toppers are an extra $5 per dozen!)</em></p>
-        <input type="text" name="toppers" placeholder="Example: Chocolate Rose">
-
-        <h4>Are you wanting them to be individually wrapped?</h4>
-        <p><em>(+$2 Per dozen)</em></p>
-        <label>
-            <input type="radio" name="wrapped" value="Yes, I would like them individually wrapped!"> Yes, I would like them individually wrapped!
-        </label><br>
-        <label>
-            <input type="radio" name="unwrapped" value="Forget about it!"> Forget about it!
-        </label>
-
-        <h4>Preffered contact method:</h4>
-
-            <label>
-                <input type="radio" name="ContactInfo" value="Text Message">Text Message
-            </label><br>
-            <label>
-                <input type="radio" name="ContactInfo" value="Email">Email
-            </label>
-
+                <label>
+                    <input type="radio" name="ContactInfo" value="Text Message">Text Message
+                </label><br>
+                <label>
+                    <input type="radio" name="ContactInfo" value="Email">Email
+                </label>
+            </div>
             <h4>Terms, Conditions, & Allergen Acknowledgement:</h4>
             <label>
                 <input type="checkbox" name="terms" required>
@@ -174,35 +193,36 @@
             <div id="termsModal" style="display:none;">
                 <div class="modal-content">
                     <h3>Terms and Conditions</h3>
-                    <p>allergy notice:
-                        * cake pops/ oreos contain eggs, milk, soy, wheat (unless gf oreos)
-                        * please be aware that all products are prepared, baked and packaged in a home kitchen where allergens may be present. cross contamination is one thing we try to avoid, but there is no guarantee.
-                        * this food is made in a home kitchen and not inspected by health services or local health department
-                        
-                        order pick up:
-                        * all orders are pick up only. the exact location will be provided prior to pickup via email.
-                        
-                        payment:
-                        * full payment is required upfront for orders under $50 or less to secure your order.
-                        * a non-refundable 50% deposit is required for orders over $50 to secure your order.
-                        * if your deposit is not paid, your order is not secured. 
-                        
-                        order notice:
-                        * filling out this form does not confirm your order. we will get back to you 24hrs after you submit, via email.</p>
+                        <p><strong>allergy notice: </strong><br>
+                        &nbsp&nbsp&nbsp<strong>C</strong>ake pops & oreos contain eggs, milk, soy, wheat (unless gf oreos) <br>
+                        &nbsp&nbsp&nbsp<strong>P</strong>lease be aware that all products are prepared, baked and packaged in a home kitchen where allergens may be present. Cross contamination is one thing we try to avoid, but there is no guarantee.<br>
+                        <br>
+                        <strong>order pick up:</strong><br>
+                        &nbsp&nbsp&nbsp<strong>A</strong>ll orders are pick up only. the exact location will be provided prior to pickup via email. <br>
+                        <br>
+                        <strong>payment:</strong><br>
+                        &nbsp&nbsp&nbsp<strong>F</strong>ull payment is required upfront for orders under $50 or less to secure your order. <br>
+                        &nbsp&nbsp&nbsp<strong>A</strong> non-refundable 50% deposit is required for orders over $50 to secure your order. <br>
+                        &nbsp&nbsp&nbsp<strong>I</strong>f your deposit is not paid, your order is not secured. <br>
+                        <br>
+                        <strong>order notice:</strong><br>
+                        &nbsp&nbsp&nbsp<strong>F</strong>illing out this form does not confirm your order. we will get back to you 24hrs after you submit, via email.</p> <br>
                     <button id="closeModal">Close</button>
                 </div>
             </div>
         
+        <div id="feedbackDiv">
+            <h4>Anything else you'd like to add?</h4>
+            <input type="text" name="moreInfo" placeholder="Let me know here!" id="feedback">
+        </div>
+        <div id="refferalDiv">
+            <h4>How did you hear about Daylily Treats?</h4>
+            <input type="text" name="marketing" placeholder="Example: Word of mouth!" id="referral">
 
-        <h4>Anything else you'd like to add?</h4>
-        <input type="text" name="moreInfo" placeholder="Let me know here!">
 
-        <h4>How did you hear about Daylily Treats?</h4>
-        <input type="text" name="marketing" placeholder="Example: Word of mouth!">
-
-
-        <input type="submit" value="Submit Order">
-      </div>
+            <input type="submit" value="Submit Order" id="submitOrder">
+        </div>
+    </div>
     </form>
       <div id="footer">
 
